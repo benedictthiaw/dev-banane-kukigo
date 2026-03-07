@@ -219,41 +219,104 @@ img{ max-width: 100%; display:block; }
 .muted{ color: rgba(244,246,255,.55); }
 
 /* =========================================================
-   8) OBJECTIF (cards)
+   8) A PROPOS / BLOCS ALTERNÉS
    ========================================================= */
-.cards{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 18px;
+.about-block{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
 }
 
-.card{
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: rgba(18,20,26,.55);
-  padding: 16px;
-  box-shadow: var(--shadow);
+.about-block + .about-block{
+  margin-top: 56px;
 }
-.card h3{ margin: 0 0 6px; font-size: 18px; }
-.card p{ margin: 0; color: var(--muted); }
 
-/* =========================================================
-   9) A PROPOS (mise en page + listes)
-   ========================================================= */
-.about{
-  display:grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 18px;
-  align-items: start;
+.about-block__content{
+  max-width: 680px;
+}
+
+.about-block__media figure{
+  margin: 0;
 }
 
 .bullets{
-  margin: 12px 0 0;
-  padding-left: 18px;
-  color: var(--muted);
+  margin: 16px 0 0;
+  padding-left: 20px;
+  color: var(--text-soft);
 }
-.bullets li{ margin: 6px 0; }
+
+.bullets li{
+  margin: 8px 0;
+}
+
+.quote{
+  margin: 18px 0;
+  padding: 18px 20px;
+  border-left: 4px solid var(--yellow-main);
+  background: rgba(255,255,255,.65);
+  border-radius: 12px;
+  font-style: italic;
+  color: var(--text);
+  box-shadow: var(--shadow-xs);
+}
+
+/* =========================================================
+   9) RECONNAISSANCE / MEDIAS
+   ========================================================= */
+.recognition{
+  margin-top: 32px;
+  padding: 22px;
+  border-left: 4px solid var(--green-main);
+  background: rgba(50, 238, 122, 0.75);
+  border-radius: 14px;
+  box-shadow: var(--shadow-xs);
+}
+
+.recognition h4{
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: var(--green-dark);
+}
+
+.recognition p{
+  margin-bottom: 18px;
+  color: var(--text-soft);
+}
+
+.recognition__logos{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.recognition__item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #35e93e;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-xs);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.recognition__item:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.recognition__item img{
+  height: 26px;
+  width: auto;
+}
+
+.recognition__item span{
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--green-dark);
+}
 
 /* =========================================================
    10) PRODUITS (grilles + éléments)
@@ -315,6 +378,11 @@ img{ max-width: 100%; display:block; }
   aspect-ratio: 3 / 4;
   max-height: 520px;
 }
+
+.media--portrait img{
+  object-position: 80% center;
+}
+
 .media--contact{
   aspect-ratio: 4 / 5;
   max-height: 520px;
